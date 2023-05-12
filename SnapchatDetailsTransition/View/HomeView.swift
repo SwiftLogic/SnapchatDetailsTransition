@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var videoFiles: [VideoFile] = files
+    @State private var isExpanded: Bool = false
+    @Namespace private var namespace
+
     var body: some View {
         VStack(spacing: 0) {
             HeaderView()
                 .padding(.horizontal)
                 .padding(.vertical, 10)
+            
+            
+            ScrollView(showsIndicators: false) {
+                LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2), spacing: 10) {
+                    ForEach($videoFiles) { $file in
+                        CardView(videoFile: $file, isExpanded: $isExpanded, animationID: namespace) {
+                            /// - 
+                        }
+                    }
+                }
+            }
         }
     }
     
