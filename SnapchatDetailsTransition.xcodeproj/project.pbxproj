@@ -19,6 +19,8 @@
 		E966C5752A0E6B3C00372971 /* Reel1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E966C5702A0E6B3C00372971 /* Reel1.mp4 */; };
 		E966C5762A0E6B3C00372971 /* Reel5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E966C5712A0E6B3C00372971 /* Reel5.mp4 */; };
 		E966C5772A0E6B3C00372971 /* Reel4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E966C5722A0E6B3C00372971 /* Reel4.mp4 */; };
+		E966C57C2A0E6C6D00372971 /* VideoFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966C57B2A0E6C6D00372971 /* VideoFile.swift */; };
+		E966C57E2A0E6D2A00372971 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966C57D2A0E6D2A00372971 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		E966C5702A0E6B3C00372971 /* Reel1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reel1.mp4; sourceTree = "<group>"; };
 		E966C5712A0E6B3C00372971 /* Reel5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reel5.mp4; sourceTree = "<group>"; };
 		E966C5722A0E6B3C00372971 /* Reel4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reel4.mp4; sourceTree = "<group>"; };
+		E966C57B2A0E6C6D00372971 /* VideoFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFile.swift; sourceTree = "<group>"; };
+		E966C57D2A0E6D2A00372971 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				E966C5452A0E69E100372971 /* ContentView.swift */,
+				E966C57D2A0E6D2A00372971 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 		E966C57A2A0E6C2500372971 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E966C57B2A0E6C6D00372971 /* VideoFile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +315,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E966C57C2A0E6C6D00372971 /* VideoFile.swift in Sources */,
+				E966C57E2A0E6D2A00372971 /* HomeView.swift in Sources */,
 				E966C5462A0E69E100372971 /* ContentView.swift in Sources */,
 				E966C5442A0E69E100372971 /* SnapchatDetailsTransitionApp.swift in Sources */,
 			);
