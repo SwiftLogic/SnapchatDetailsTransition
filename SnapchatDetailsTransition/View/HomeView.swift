@@ -11,17 +11,62 @@ struct HomeView: View {
     var body: some View {
         VStack(spacing: 0) {
             HeaderView()
+                .padding(.horizontal)
+                .padding(.vertical, 10)
         }
     }
     
+   
+}
+
+
+private struct HeaderView: View {
+    var body: some View {
+        HStack(spacing: 12) {
+            Image("Logo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 25, height: 25)
+                .headerButtonBG()
+            button(image: "magnifyingglass")
+            Spacer()
+            button(image: "person.badge.plus")
+            button(image: "ellipsis")
+        }
+        .overlay {
+            Text("Stories")
+                .font(.title3)
+                .fontWeight(.black)
+        }
+    }
+    
+    
     @ViewBuilder
-    private func HeaderView() -> some View {
-        
+    private func button(image: String) -> some View {
+        Button {
+            //
+        } label: {
+            Image(systemName: image)
+                .fontWeight(.semibold)
+                .foregroundColor(.black)
+                .headerButtonBG()
+        }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+extension View {
+    func headerButtonBG() -> some View {
+        self
+        .frame(width: 40, height: 40)
+        .background {
+            Circle()
+                .fill(.gray.opacity(0.1))
+        }
     }
 }
