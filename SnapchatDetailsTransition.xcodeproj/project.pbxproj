@@ -14,6 +14,11 @@
 		E966C5552A0E69E300372971 /* SnapchatDetailsTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966C5542A0E69E300372971 /* SnapchatDetailsTransitionTests.swift */; };
 		E966C55F2A0E69E300372971 /* SnapchatDetailsTransitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966C55E2A0E69E300372971 /* SnapchatDetailsTransitionUITests.swift */; };
 		E966C5612A0E69E400372971 /* SnapchatDetailsTransitionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966C5602A0E69E400372971 /* SnapchatDetailsTransitionUITestsLaunchTests.swift */; };
+		E966C5732A0E6B3C00372971 /* Reel3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E966C56E2A0E6B3C00372971 /* Reel3.mp4 */; };
+		E966C5742A0E6B3C00372971 /* Reel2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E966C56F2A0E6B3C00372971 /* Reel2.mp4 */; };
+		E966C5752A0E6B3C00372971 /* Reel1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E966C5702A0E6B3C00372971 /* Reel1.mp4 */; };
+		E966C5762A0E6B3C00372971 /* Reel5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E966C5712A0E6B3C00372971 /* Reel5.mp4 */; };
+		E966C5772A0E6B3C00372971 /* Reel4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E966C5722A0E6B3C00372971 /* Reel4.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		E966C55A2A0E69E300372971 /* SnapchatDetailsTransitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapchatDetailsTransitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E966C55E2A0E69E300372971 /* SnapchatDetailsTransitionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapchatDetailsTransitionUITests.swift; sourceTree = "<group>"; };
 		E966C5602A0E69E400372971 /* SnapchatDetailsTransitionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapchatDetailsTransitionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E966C56E2A0E6B3C00372971 /* Reel3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reel3.mp4; sourceTree = "<group>"; };
+		E966C56F2A0E6B3C00372971 /* Reel2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reel2.mp4; sourceTree = "<group>"; };
+		E966C5702A0E6B3C00372971 /* Reel1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reel1.mp4; sourceTree = "<group>"; };
+		E966C5712A0E6B3C00372971 /* Reel5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reel5.mp4; sourceTree = "<group>"; };
+		E966C5722A0E6B3C00372971 /* Reel4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reel4.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,7 @@
 				E966C5432A0E69E100372971 /* SnapchatDetailsTransitionApp.swift */,
 				E966C5452A0E69E100372971 /* ContentView.swift */,
 				E966C5472A0E69E300372971 /* Assets.xcassets */,
+				E966C56D2A0E6B3C00372971 /* Sample Videos */,
 				E966C5492A0E69E300372971 /* Preview Content */,
 			);
 			path = SnapchatDetailsTransition;
@@ -125,6 +136,18 @@
 				E966C5602A0E69E400372971 /* SnapchatDetailsTransitionUITestsLaunchTests.swift */,
 			);
 			path = SnapchatDetailsTransitionUITests;
+			sourceTree = "<group>";
+		};
+		E966C56D2A0E6B3C00372971 /* Sample Videos */ = {
+			isa = PBXGroup;
+			children = (
+				E966C56E2A0E6B3C00372971 /* Reel3.mp4 */,
+				E966C56F2A0E6B3C00372971 /* Reel2.mp4 */,
+				E966C5702A0E6B3C00372971 /* Reel1.mp4 */,
+				E966C5712A0E6B3C00372971 /* Reel5.mp4 */,
+				E966C5722A0E6B3C00372971 /* Reel4.mp4 */,
+			);
+			path = "Sample Videos";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,8 +254,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E966C5752A0E6B3C00372971 /* Reel1.mp4 in Resources */,
 				E966C54B2A0E69E300372971 /* Preview Assets.xcassets in Resources */,
 				E966C5482A0E69E300372971 /* Assets.xcassets in Resources */,
+				E966C5742A0E6B3C00372971 /* Reel2.mp4 in Resources */,
+				E966C5732A0E6B3C00372971 /* Reel3.mp4 in Resources */,
+				E966C5772A0E6B3C00372971 /* Reel4.mp4 in Resources */,
+				E966C5762A0E6B3C00372971 /* Reel5.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +373,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -399,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -423,8 +451,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,6 +459,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = osaretin.uyigue.SnapchatDetailsTransition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,8 +482,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,6 +490,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = osaretin.uyigue.SnapchatDetailsTransition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -476,7 +508,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M6D9BZ85YH;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = osaretin.uyigue.SnapchatDetailsTransitionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,7 +528,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M6D9BZ85YH;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = osaretin.uyigue.SnapchatDetailsTransitionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
