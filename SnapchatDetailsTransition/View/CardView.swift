@@ -28,9 +28,15 @@ struct CardView<Overlay: View>: View {
     }
     
     var body: some View {
-        Text("Hello, World!")
+        GeometryReader {
+            let size = $0.size
+            
+            /// - Displaying Thumbail Instead of showing paused video
+            /// - For Saving Memory
+            /// - Displaying Thumbnail
+        }
     }
-}
+}   
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
