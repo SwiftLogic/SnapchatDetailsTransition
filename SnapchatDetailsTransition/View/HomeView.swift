@@ -53,7 +53,7 @@ struct HomeView: View {
                 DetailsView(videoFile: $videoFiles.index(expandedID), isExpanded: $isExpanded, animationID: namespace)
                 
                 /// - Adding Transition for Smooth Expansion
-                    .transition(.identity)
+                    .transition(.asymmetric(insertion: .identity, removal: .offset(y: 5)))
                     .onTapGesture {
                         withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 0.7, blendDuration: 0.7)) {
                             isExpanded = false
@@ -110,6 +110,7 @@ private struct DetailsView: View {
         CardView(videoFile: $videoFile, isExpanded: $isExpanded, animationID: animationID, isDetailsView: true) {
             //
         }
+        .ignoresSafeArea()
     }
 }
 
