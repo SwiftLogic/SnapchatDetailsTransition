@@ -23,10 +23,14 @@ struct HomeView: View {
                 LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2), spacing: 10) {
                     ForEach($videoFiles) { $file in
                         CardView(videoFile: $file, isExpanded: $isExpanded, animationID: namespace) {
-                            /// - 
+                            /// - We're going to leave this empty
+                            
                         }
+                        .frame(height: 300)
                     }
                 }
+                .padding(.horizontal)
+                .padding(.vertical, 10)
             }
         }
     }

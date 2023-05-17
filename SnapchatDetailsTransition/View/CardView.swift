@@ -34,6 +34,8 @@ struct CardView<Overlay: View>: View {
             /// - Displaying Thumbail Instead of showing paused video
             /// - For Saving Memory
             /// - Displaying Thumbnail
+            CustomVideoPlayer(player: videoFile.player)
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
         }
     }
 }   
