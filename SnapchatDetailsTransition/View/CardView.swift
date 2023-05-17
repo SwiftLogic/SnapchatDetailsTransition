@@ -53,6 +53,8 @@ struct CardView<Overlay: View>: View {
                     }
             }
         }
+        /// Adding Matched Geometry
+        .matchedGeometryEffect(id: videoFile.id.uuidString, in: animationID)
     }
 }
 
