@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct CardView<Overlay: View>: View {
     var overlay: Overlay
@@ -34,11 +35,56 @@ struct CardView<Overlay: View>: View {
             /// - Displaying Thumbail Instead of showing paused video
             /// - For Saving Memory
             /// - Displaying Thumbnail
-            CustomVideoPlayer(player: videoFile.player)
-                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+//            CustomVideoPlayer(player: videoFile.player)
+//                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            if let thumbnail = videoFile.thumbnail {
+                Image(uiImage: thumbnail)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: size.width, height: size.height)
+                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            } else {
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .onAppear {
+                        extractImageAt(time: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)) { thumbnail in
+                            videoFile.thumbnail = thumbnail
+                        }
+                    }
+            }
         }
     }
-}   
+}
+
+
+extension CardView {
+    private func extractImageAt(time: CMTime,
+                                size: CGSize,
+                                completion: @escaping (UIImage) -> ()) {
+        DispatchQueue.global(qos: .userInteractive).async {
+            let asset = AVAsset(url: videoFile.fileURL)
+            let generator = AVAssetImageGenerator(asset: asset)
+            generator.appliesPreferredTrackTransform = true
+            generator.maximumSize = size
+            
+            Task {
+                do {
+                    let cgImage = try await generator.image(at: time)
+                    let thumbnail = UIImage(cgImage: cgImage.image)
+                    await MainActor.run(body: {
+                        completion(thumbnail)
+                    })
+                } catch let thumbnailGeneratorError {
+                    print("Failed to Fetch Thumbnail, \(thumbnailGeneratorError.localizedDescription)")
+                }
+            }
+        }
+        
+    }
+    
+}
+
+
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
