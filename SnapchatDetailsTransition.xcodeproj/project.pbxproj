@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E902C3F22A2C31C40061F535 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902C3F12A2C31C40061F535 /* DetailsView.swift */; };
 		E966C5442A0E69E100372971 /* SnapchatDetailsTransitionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966C5432A0E69E100372971 /* SnapchatDetailsTransitionApp.swift */; };
 		E966C5462A0E69E100372971 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966C5452A0E69E100372971 /* ContentView.swift */; };
 		E966C5482A0E69E300372971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E966C5472A0E69E300372971 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E902C3F12A2C31C40061F535 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		E966C5402A0E69E100372971 /* SnapchatDetailsTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapchatDetailsTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E966C5432A0E69E100372971 /* SnapchatDetailsTransitionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapchatDetailsTransitionApp.swift; sourceTree = "<group>"; };
 		E966C5452A0E69E100372971 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				E966C5BB2A144ECE00372971 /* CustomVideoPlayer.swift */,
 				E966C57D2A0E6D2A00372971 /* HomeView.swift */,
 				E966C5802A0E730100372971 /* CardView.swift */,
+				E902C3F12A2C31C40061F535 /* DetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E966C57C2A0E6C6D00372971 /* VideoFile.swift in Sources */,
+				E902C3F22A2C31C40061F535 /* DetailsView.swift in Sources */,
 				E966C57E2A0E6D2A00372971 /* HomeView.swift in Sources */,
 				E966C5462A0E69E100372971 /* ContentView.swift in Sources */,
 				E966C5442A0E69E100372971 /* SnapchatDetailsTransitionApp.swift in Sources */,
