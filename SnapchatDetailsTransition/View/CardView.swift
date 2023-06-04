@@ -47,7 +47,6 @@ struct CardView<Overlay: View>: View {
                     .overlay {
                         /// - Displaying Video Player Only for Details View
                         if videoFile.playVideo && isDetailsView {
-                            /// TEST LATER & IF VIDEO PLAYER STILL PLAYING OUTSIDE OF DETAILS FIX IT
                             CustomVideoPlayer(player: videoFile.player)
                                 .transition(.identity)
                         }
