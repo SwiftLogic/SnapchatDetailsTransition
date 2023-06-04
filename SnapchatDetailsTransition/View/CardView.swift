@@ -9,6 +9,7 @@ import SwiftUI
 import AVKit
 
 struct CardView<Overlay: View>: View {
+    private let screenSize = UIScreen.main.bounds
     var overlay: Overlay
     @Binding var videoFile: VideoFile
     @Binding var isExpanded: Bool
@@ -42,7 +43,15 @@ struct CardView<Overlay: View>: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width: size.width, height: size.height)
+                    .overlay {
+                        /// - Displaying Video Player Only for Details View
+                        if videoFile.playVideo && isDetailsView {
+                            /// TEST LATER & IF VIDEO PLAYER STILL PLAYING OUTSIDE OF DETAILS FIX IT
+                            CustomVideoPlayer(player: videoFile.player)
+                        }
+                    }
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    .scaleEffect(scale)
             } else {
                 Rectangle()
                     .foregroundColor(.clear)
@@ -55,6 +64,20 @@ struct CardView<Overlay: View>: View {
         }
         /// Adding Matched Geometry
         .matchedGeometryEffect(id: videoFile.id.uuidString, in: animationID)
+        .offset(videoFile.offset)
+        ///-  Make the card move around the center of the screen when the user drags it.
+        .offset(y: videoFile.offset.height * -0.7)
+    }
+    
+    private var scale: CGFloat {
+        var yOffset = videoFile.offset.height
+        /// - Applying scaling only when dragged downwards
+        yOffset = yOffset < 0 ? 0 : yOffset
+        var progress = yOffset / screenSize.height
+        /// - Limiting Progress
+        progress = 1 - (progress > 0.4 ? 0.4 : progress)
+        /// - When the View is Closed Immediately Reset the Scale to 1, so matched geo can do it's thing
+        return (isExpanded ? progress : 1)
     }
 }
 

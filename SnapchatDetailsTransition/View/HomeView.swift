@@ -19,7 +19,6 @@ struct HomeView: View {
                 .padding(.horizontal)
                 .padding(.vertical, 10)
             
-            
             ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2), spacing: 10) {
                     ForEach($videoFiles) { $file in
@@ -30,7 +29,6 @@ struct HomeView: View {
                         } else {
                             CardView(videoFile: $file, isExpanded: $isExpanded, animationID: namespace) {
                                 /// - We're going to leave this empty
-                                
                             }
                             .frame(height: 300)
                             .contentShape(Rectangle())
@@ -105,12 +103,55 @@ private struct DetailsView: View {
     @Binding var videoFile: VideoFile
     @Binding var isExpanded: Bool
     var animationID: Namespace.ID
-    
+    @GestureState private var isDragging = false
     var body: some View {
         CardView(videoFile: $videoFile, isExpanded: $isExpanded, animationID: animationID, isDetailsView: true) {
             //
         }
         .ignoresSafeArea()
+        .gesture(
+            DragGesture()
+                .updating($isDragging, body: { _, dragState, _ in
+                    dragState = true
+                }).onChanged({ value in
+                    var translation = value.translation
+                    translation = isDragging ? translation : .zero
+                    videoFile.offset = translation
+                }).onEnded({ value in
+                    if value.translation.height > 200 {
+                        /// - Closing video with animation
+                        videoFile.player.pause()
+                        
+                        /// - First Closing View And In the Mid of Animation Resetting The player to start and hiding the video view
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+                            videoFile.player.seek(to: .zero)
+                            videoFile.playVideo = false
+                        }
+                        
+                        withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 0.7, blendDuration: 0.7)) {
+                            closeVideoPlayer()
+                        }
+                    } else {
+                        withAnimation(.easeOut(duration: 0.25)) {
+                            videoFile.offset = .zero
+                        }
+                    }
+                   
+                })
+        )
+        .onAppear {
+            /// - Playing the Video as soon as the animation appears
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.28) {
+                videoFile.playVideo = true
+                videoFile.player.play()
+            }
+        }
+    }
+    
+    private func closeVideoPlayer() {
+        videoFile.offset = .zero
+        isExpanded = false
     }
 }
 
