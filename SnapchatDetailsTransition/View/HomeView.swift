@@ -29,6 +29,7 @@ struct HomeView: View {
                         } else {
                             CardView(videoFile: $file, isExpanded: $isExpanded, animationID: namespace) {
                                 /// - We're going to leave this empty
+                                OverlayView()
                             }
                             .frame(height: 300)
                             .contentShape(Rectangle())
@@ -64,6 +65,75 @@ struct HomeView: View {
    
 }
 
+
+extension HomeView {
+    
+    @ViewBuilder
+    private func OverlayView() -> some View {
+        VStack {
+            HStack {
+               Image("Pic")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 35, height: 35)
+                    .clipShape(Circle())
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("iJustine")
+                        .font(.callout)
+                        .fontWeight(.bold)
+                    
+                    Text("4 hr ago")
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white.opacity(0.7))
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                Image(systemName: "bookmark")
+                    .font(.title3)
+                
+                Image(systemName: "ellipsis")
+                    .font(.title3)
+                    .rotationEffect(.init(degrees: -90))
+            }
+            .foregroundColor(.white)
+            .frame(maxHeight: .infinity, alignment: .top)
+            
+            viewMoreEpisodesButton
+        }
+    }
+    
+    private var viewMoreEpisodesButton: some View {
+        Button {
+            
+        } label: {
+            Text("View More Episodes")
+                .font(.callout)
+                .fontWeight(.bold)
+                .foregroundColor(.black)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 8)
+                .background(Capsule().fill(Color.white))
+                .frame(maxWidth: .infinity)
+                .overlay(alignment: .trailing) {
+                    shareButton
+                }
+        }
+
+    }
+    
+    private var shareButton: some View {
+        Button {
+            
+        } label: {
+            Image(systemName: "paperplane.fill")
+                .font(.title3)
+                .foregroundColor(.white)
+                .frame(width: 40, height: 40)
+                .background(Circle().fill(.ultraThinMaterial))
+        }
+    }
+}
 
 private struct HeaderView: View {
     var body: some View {
@@ -143,8 +213,10 @@ private struct DetailsView: View {
         .onAppear {
             /// - Playing the Video as soon as the animation appears
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.28) {
-                videoFile.playVideo = true
-                videoFile.player.play()
+                withAnimation(.easeInOut) {
+                    videoFile.playVideo = true
+                    videoFile.player.play()
+                }
             }
         }
     }

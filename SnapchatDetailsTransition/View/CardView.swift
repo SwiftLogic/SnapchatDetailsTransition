@@ -42,13 +42,18 @@ struct CardView<Overlay: View>: View {
                 Image(uiImage: thumbnail)
                     .resizable()
                     .scaledToFill()
+                    .opacity(videoFile.playVideo ? 0 : 1)
                     .frame(width: size.width, height: size.height)
                     .overlay {
                         /// - Displaying Video Player Only for Details View
                         if videoFile.playVideo && isDetailsView {
                             /// TEST LATER & IF VIDEO PLAYER STILL PLAYING OUTSIDE OF DETAILS FIX IT
                             CustomVideoPlayer(player: videoFile.player)
+                                .transition(.identity)
                         }
+                    }
+                    .overlay {
+                        overlay
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                     .scaleEffect(scale)
@@ -94,8 +99,9 @@ extension CardView {
             
             Task {
                 do {
-                    let cgImage = try await generator.image(at: time)
-                    let thumbnail = UIImage(cgImage: cgImage.image)
+                    let cgImage = try await generator.image(at: time).image
+                    guard let colorCorrectedImage = cgImage.copy(colorSpace: CGColorSpaceCreateDeviceRGB()) else {return}
+                    let thumbnail = UIImage(cgImage: colorCorrectedImage)
                     await MainActor.run(body: {
                         completion(thumbnail)
                     })
